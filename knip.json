@@ -1,0 +1,5 @@
+{
+	"ignore": ["prettier.config.js"],
+	"entry": ["src/main.ts"],
+	"project": ["**/*.{js,ts,tsx,vue}"]
+}
