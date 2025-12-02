@@ -1,6 +1,7 @@
 /** @type {import('stylelint').Config} */
 export default {
 	extends: ["stylelint-config-recommended-vue", "stylelint-config-recess-order"],
+	ignoreFiles: ["src/shared/ui/**", "src/widgets/components/**", "dist/**"],
 	plugins: [
 		"@stylistic/stylelint-plugin",
 		"stylelint-high-performance-animation",

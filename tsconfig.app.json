@@ -17,5 +17,5 @@
 		}
 	},
 
-	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "eslint.config.ts"]
+	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "eslint.config.ts", "openapi-ts.config.ts"]
 }

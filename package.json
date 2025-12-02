@@ -11,13 +11,12 @@
 		"lint:fix": "eslint . --fix",
 		"stylelint": "stylelint \"**/*.{css,scss,vue}\" --quiet",
 		"stylelint:fix": "stylelint \"**/*.{css,scss,vue}\" --fix",
-		"format:fix": "prettier --write . --log-level warn",
-		"format": "prettier --check . --log-level warn",
 		"typecheck": "vue-tsc --noEmit",
 		"circular": "dpdm --exit-code circular:1 --no-tree --no-warning --progress false --transform \"./src/main.ts\"",
 		"deadcode": "knip --exclude binaries,dependencies,unlisted",
-		"check": "run-p typecheck lint format stylelint circular deadcode",
-		"fix": "run-p lint:fix stylelint:fix format:fix"
+		"check": "run-p typecheck lint stylelint circular deadcode",
+		"fix": "run-p lint:fix stylelint:fix",
+		"openapi-ts": "openapi-ts"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.17",
@@ -36,6 +35,7 @@
 		"vue-router": "^4.6.3"
 	},
 	"devDependencies": {
+		"@hey-api/openapi-ts": "^0.88.0",
 		"@stylistic/stylelint-plugin": "^4.0.0",
 		"@types/node": "^24.10.1",
 		"@vitejs/plugin-vue": "^6.0.2",
