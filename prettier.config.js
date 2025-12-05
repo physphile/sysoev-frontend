@@ -6,11 +6,13 @@ const config = {
 	arrowParens: "avoid",
 	bracketSpacing: true,
 	endOfLine: "auto",
+	htmlWhitespaceSensitivity: "ignore",
 	printWidth: 120,
 	semi: true,
 	singleQuote: false,
 	trailingComma: "es5",
 	useTabs: true,
+	vueIndentScriptAndStyle: false,
 };
 
 export default config;

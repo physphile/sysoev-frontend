@@ -22,12 +22,12 @@ useHead({
 			<Card v-for="{ name, lecturesCount, id } in topics" :key="id" class="relative">
 				<CardHeader>
 					<CardTitle>
-						<RouterLink :to="{ name: 'topic', params: { topicId: id } }" class="fill-link">{{
-							name
-						}}</RouterLink></CardTitle
-					>
-					<CardDescription
-						>{{ lecturesCount }}
+						<RouterLink :to="{ name: 'topic', params: { topicId: id } }" class="fill-link">
+							{{ name }}
+						</RouterLink>
+					</CardTitle>
+					<CardDescription>
+						{{ lecturesCount }}
 						{{
 							pluralize(lecturesCount, {
 								zero: "бесед",
@@ -37,8 +37,8 @@ useHead({
 								many: "бесед",
 								other: "бесед",
 							})
-						}}</CardDescription
-					>
+						}}
+					</CardDescription>
 				</CardHeader>
 			</Card>
 		</div>

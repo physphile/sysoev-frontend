@@ -49,8 +49,6 @@ export default defineConfigWithVueTs(
 			"unicorn/prefer-at": ["error", { checkAllIndexAccess: true }],
 			"unicorn/prefer-ternary": "off",
 			"unicorn/prevent-abbreviations": "off",
-			"vue/multi-word-component-names": "warn",
-			"vue/no-template-shadow": "error",
 		},
 		settings: {
 			"import/resolver": {

@@ -117,6 +117,8 @@ export type GetTopicsByIdResponses = {
             duration: number;
             fullText: string;
             id: number;
+            order: number;
+            src: string;
             title: string;
             topicId: number;
             createdAt: unknown;
@@ -143,6 +145,8 @@ export type GetLecturesResponses = {
             description: string | unknown;
             duration: number;
             id: number;
+            order: number;
+            src: string;
             title: string;
             topicId: number;
             createdAt: unknown;
@@ -177,6 +181,8 @@ export type GetLecturesByIdResponses = {
         duration: number;
         fullText: string;
         id: number;
+        order: number;
+        src: string;
         title: string;
         topicId: number;
         createdAt: unknown;

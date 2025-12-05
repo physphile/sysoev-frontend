@@ -44,15 +44,17 @@ useHead({
 		]"
 	/>
 	<div class="flex flex-col gap-4 px-4 pb-4">
-		<h1 class="text-2xl font-bold">{{ topic?.name }}</h1>
+		<h1 class="text-2xl font-bold">
+			{{ topic?.name }}
+		</h1>
 		<div class="flex flex-col gap-2">
 			<Card v-for="lecture in topic?.lectures" :key="lecture.id" class="relative">
 				<CardHeader>
-					<CardTitle
-						><RouterLink :to="{ name: 'lecture', params: { lectureId: lecture.id } }" class="fill-link">{{
-							lecture.title
-						}}</RouterLink></CardTitle
-					>
+					<CardTitle>
+						<RouterLink :to="{ name: 'lecture', params: { lectureId: lecture.id } }" class="fill-link">
+							{{ lecture.title }}
+						</RouterLink>
+					</CardTitle>
 					<CardDescription>{{ getDurations(lecture.duration) }}</CardDescription>
 				</CardHeader>
 			</Card>
