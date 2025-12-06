@@ -59,6 +59,19 @@ export type UserWritable = {
     updatedAt: string;
 };
 
+export type GetStaticByPathData = {
+    body?: never;
+    path: {
+        path: string;
+    };
+    query?: never;
+    url: '/static/{path}';
+};
+
+export type GetStaticByPathResponses = {
+    200: unknown;
+};
+
 export type GetUserData = {
     body?: never;
     path?: never;

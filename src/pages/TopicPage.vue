@@ -5,7 +5,7 @@ import { computed } from "vue";
 import { useRoute } from "vue-router";
 
 import { getTopicsByIdOptions } from "@/shared/api/sysoev/@tanstack/vue-query.gen.ts";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/shared/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
 import PageHeader from "@/widgets/PageHeader.vue";
 
 const { params } = useRoute();
@@ -34,6 +34,8 @@ useHead({
 	title,
 	titleTemplate: "%s • Проповеди • Священник Даниил Сысоев",
 });
+
+const getLectureSrc = (src: string) => `${import.meta.env.VITE_API_URL}/static${src}`;
 </script>
 
 <template>
@@ -48,14 +50,19 @@ useHead({
 			{{ topic?.name }}
 		</h1>
 		<div class="flex flex-col gap-2">
-			<Card v-for="lecture in topic?.lectures" :key="lecture.id" class="relative">
+			<Card v-for="{ title: lectureTitle, id, src, duration } in topic?.lectures" :key="id">
 				<CardHeader>
 					<CardTitle>
-						<RouterLink :to="{ name: 'lecture', params: { lectureId: lecture.id } }" class="fill-link">
-							{{ lecture.title }}
+						<RouterLink :to="{ name: 'lecture', params: { lectureId: id } }">
+							{{ lectureTitle }}
 						</RouterLink>
 					</CardTitle>
-					<CardDescription>{{ getDurations(lecture.duration) }}</CardDescription>
+					<CardDescription>
+						{{ getDurations(duration) }}
+					</CardDescription>
+					<CardContent>
+						<audio :src="getLectureSrc(src)" controls preload="none" />
+					</CardContent>
 				</CardHeader>
 			</Card>
 		</div>
